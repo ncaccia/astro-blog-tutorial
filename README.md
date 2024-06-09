@@ -11,7 +11,8 @@
 #### Unit 2 - Pages
 
 - .astro syntax === html + js files
-  - `.astro` file’s frontmatter is written in JS
+  - `.astro` file’s frontmatter is written in JS (also called **code fences**)
+    - If there is nothing in the frontmatter of your .astro file, you don’t have to write the code fences. You can always add them back in when you need them.
 - [File-based Routing in Astro](https://docs.astro.build/en/basics/astro-pages/#file-based-routing)
 - [Astro page HTML](https://docs.astro.build/en/basics/astro-pages/#astro-pages)
 - Write Markdown content
@@ -40,4 +41,34 @@
 
 #### Unit 3 - Components
 
-- 
+- **Resources**
+
+  - [Astro Component Overview](https://docs.astro.build/en/basics/astro-components/)
+  - [Refactoring](https://refactoring.com/)
+  - [Component Props in Astro](https://docs.astro.build/en/basics/astro-components/#component-props)
+  - [Component-based Design](https://www.droptica.com/blog/component-based-design/)
+  - [Semantic HTML Tags](https://www.dofactory.com/html/semantics)
+  - [Mobile-first Design](https://www.mobileapps.com/blog/mobile-first-design)
+  - [Client side <scripts> in Astro](https://docs.astro.build/en/guides/client-side-scripts/)
+
+- Create a new `src/components/` folder To hold .astro files that will generate HTML but that will not become new pages on your website.
+- In Astro (and in many other frameworks that support JSX, like React), components are conventionally written with capitalized names. Ex: `Navbar.astro`
+- Import and use the components in your .astro file:
+  - `import Navigation from '../components/Navigation.astro';`
+    - Similar to react behaviour
+- Build a Header that can respond to multiple screen sizes.
+
+  - Add responsive styles:
+    - Wrap the existing navigation links in a <div> with the class nav-links.
+    - Copy the CSS styles below into global.css. These styles:
+      - Style and position the navigation links for mobile
+        - Include an expanded class that can be toggled to display or hide the links on mobile
+        - Use a @media query to define different styles for larger screen sizes
+
+- Send scripts to the browser
+  - not ALL the JS goes to the browser, just the one added between <script> tag provides client-side JavaScript to “listen” for a user event and then respond accordingly.
+  - Instead of writing your JavaScript directly on each page, you can move the contents of your <script> tag into its own .js file in your project: Create `src/scripts/`
+
+#### Check in: Unit 4 - Layouts
+
+
